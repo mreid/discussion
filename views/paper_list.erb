@@ -1,0 +1,9 @@
+<ul>
+<% @papers.each do |paper| %>
+	<li>
+		<a href="/paper/<%=paper.id%>">Paper <%= paper.id %></a> 
+		- <%= paper.title %><br/>
+		<%= paper.abstract %>
+	</li>
+<% end %>
+</ul>
