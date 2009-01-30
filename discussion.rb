@@ -1,9 +1,8 @@
-require 'rubygems'
 require 'sinatra'
 require 'sequel'
 
 configure do
-  require 'vendor/db/init'
+  require 'db/init'
 end
 
 # General pages

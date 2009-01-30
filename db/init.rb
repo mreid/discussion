@@ -1,4 +1,4 @@
-DB = Sequel.connect('sqlite://vendor/db/discussion.db')
+DB = Sequel.connect('sqlite://db/discussion.db')
 
 require File.dirname(__FILE__) + '/models'
 
