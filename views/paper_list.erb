@@ -2,8 +2,9 @@
 <% @papers.each do |paper| %>
 	<li>
 		<a href="/paper/<%=paper.id%>">Paper <%= paper.id %></a> 
-		- <%= paper.title %><br/>
-		<%= paper.abstract %>
+		- <%= paper.title %>
+		[<%= paper.comments.length %> comment(s)]
+		<br/>
 	</li>
 <% end %>
 </ul>

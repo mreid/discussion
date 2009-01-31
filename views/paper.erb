@@ -1,0 +1,22 @@
+<%= erb(:error, :layout => false) %>
+
+<h1><%= paper.title %></h1>
+
+<%= markup paper.abstract %>
+
+<ul>
+<% paper.comments.each do |comment| %>
+	<li>
+		Comment by <%= comment.email %>:
+		<%= markup comment.content %>
+	</li>
+<% end %>
+</ul>
+
+<h1>Leave a comment</h1>
+<form action="/paper/<%= paper.id %>/comment" method="POST">
+	<input type="text" name="email"><br/>
+	<textarea name="content"><%= params[:content] %></textarea>
+	<input type="hidden" name="_method" value="PUT"/>
+	<input type="submit" name="create"/>
+</form>

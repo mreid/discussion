@@ -1,0 +1,7 @@
+<% if session[:err] %>
+<div class="error">
+	<%= session[:err] %>
+	<% session.delete(:err) %>
+</div>
+<% end %>
+
