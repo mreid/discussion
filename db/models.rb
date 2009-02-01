@@ -68,7 +68,7 @@ class Comment < Sequel::Model
     varchar     :email
     text        :name
     text        :content
-    date        :date
+    time        :time
     
     foreign_key :paper_id
   end

@@ -4,11 +4,11 @@
 
 <%= markup paper.abstract %>
 
+<h1>Comments</h1>
 <ul>
 <% paper.comments.each do |comment| %>
 	<li>
-		Comment by <%= comment.email %>:
-		<%= markup comment.content %>
+		<%= erb :comment, :layout => false, :locals => { :paper => paper, :comment => comment } %>
 	</li>
 <% end %>
 </ul>

@@ -13,12 +13,17 @@ put '/paper/:num/comment' do
   
   begin
     comment = Comment.from_params( params )
+    comment.time = Time.now
     paper.add_comment(comment)
   rescue Sequel::ValidationFailed => err
     session[:err] = err.to_s
   end
 
   redirect "/paper/#{params[:num]}"
+end
+
+get '/paper/:paper/comment/:comment/edit' do
+  "Edit"
 end
 
 get '/paper/' do
